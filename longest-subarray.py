@@ -1,30 +1,30 @@
-array = [0,0,1,1,0,0,1,0,0,1,0,0,1]
+"an algorithm to find the longest subarray with equal number of 1s and 0s"
 
-length_of_array = len(array)
-longest_starting_index = 0
-longest_ending_index = 0
-maximum_counter = 0
+array = [0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1]
 
-for i in range(length_of_array):
-    zeros_counter=0
-    ones_counter=0
-    
-    for j in range(i,length_of_array):
-        
+LENGTH_OF_ARRAY = len(array)
+LONGEST_STARTING_INDEX = 0
+LONGEST_ENDING_INDEX = 0
+MAXIMUM_COUNTER = 0
+
+for i in range(LENGTH_OF_ARRAY):
+    ZEROS_COUNTER = 0
+    ONES_COUNTER = 0
+
+    for j in range(i, LENGTH_OF_ARRAY):
+
         if array[j] == 0:
-            zeros_counter+=1
-            
+            ZEROS_COUNTER += 1
+
         if array[j] == 1:
-            ones_counter+=1
-            
+            ONES_COUNTER += 1
+
         # reassign the starting and ending indices when length of subarray greater than previous
-        if zeros_counter == ones_counter and zeros_counter > maximum_counter:
-            longest_starting_index = i
-            longest_ending_index = j
-            maximum_counter = zeros_counter
-            
-print(f"start:{longest_starting_index} end:{longest_ending_index}")
-print(f"length of the subbarray is: {longest_ending_index-longest_starting_index+1}")
-        
-        
-        
+        if ZEROS_COUNTER == ONES_COUNTER and ZEROS_COUNTER > MAXIMUM_COUNTER:
+            LONGEST_STARTING_INDEX = i
+            LONGEST_ENDING_INDEX = j
+            MAXIMUM_COUNTER = ZEROS_COUNTER
+
+print(f"""starting index: {LONGEST_STARTING_INDEX}
+ending index: {LONGEST_ENDING_INDEX}""")
+print(f"length of the subbarray is: {LONGEST_ENDING_INDEX-LONGEST_STARTING_INDEX+1}")
